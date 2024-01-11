@@ -1,0 +1,46 @@
+@import "@/styles/vars.scss";
+
+.app {
+  box-sizing: border-box;
+  padding: $header-height + $app-padding $app-padding $app-padding $app-padding;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__search {
+    width: 100%;
+    max-width: $screen-xxs;
+    height: 40px;
+    display: flex;
+    align-items: center;
+  }
+
+  &__news {
+    margin: 20px 0;
+    width: 100%;
+    min-height: 300px;
+  }
+
+  &__collections {
+    margin-top: auto;
+    width: 100%;
+  }
+}
+
+@media (min-width: $screen-lg) {
+  .app {
+    padding: $app-padding-desktop * 0.7 + $header-height
+      $app-padding-desktop
+      $app-padding-desktop
+      $menu-weight + $app-padding-desktop;
+
+    &__search {
+      max-width: 500px;
+    }
+
+    &__news {
+      margin: 40px 0;
+    }
+  }
+}

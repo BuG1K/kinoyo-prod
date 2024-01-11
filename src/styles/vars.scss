@@ -1,0 +1,54 @@
+// --------------------------------------------------------
+// Layout sizes
+
+$screen-lg: 1440px;
+$screen-md: 1024px;
+$screen-sm: 768px;
+$screen-xxs: 425px;
+$screen-xs: 320px;
+$max-width: $screen-lg;
+$min-width: $screen-xs;
+// --------------------------------------------------------
+
+// --------------------------------------------------------
+// Fonts
+$font-size-base: 1rem;
+$font-size-sm: $font-size-base * .875;
+$font-size-lg: $font-size-base * 1.25;
+
+$font-weight-lighter: lighter;
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+$font-weight-bolder: bolder;
+$font-weight-base: $font-weight-normal;
+
+$line-height-base: 1.5;
+$line-height-sm: 1.25;
+$line-height-lg: 2;
+
+$h1-font-size: $font-size-base * 2.5;
+$h2-font-size: $font-size-base * 2;
+$h3-font-size: $font-size-base * 1.75;
+$h4-font-size: $font-size-base * 1.5;
+$h5-font-size: $font-size-base * 1.25;
+$h6-font-size: $font-size-base;
+$headings-font-weight: 500;
+$headings-line-height: 1.2;
+
+$lead-font-size: $font-size-base * 1.25;
+$lead-font-weight: 300;
+$small-font-size: .875em;
+$sub-sup-font-size: .75em;
+// --------------------------------------------------------
+
+// --------------------------------------------------------
+// Vars
+
+$header-height: 65px;
+$menu-weight: 400px;
+$app-padding: 20px;
+$app-padding-desktop: 60px;
+// --------------------------------------------------------

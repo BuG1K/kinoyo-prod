@@ -1,0 +1,28 @@
+@import "@/styles/vars.scss";
+
+.collections {
+  &__navButton {
+    border: none;
+    border-radius: 4px;
+    padding: 5px;
+    background: none;
+    color: rgb(255, 255, 255);
+
+    &_active {
+      color: rgb(102, 178, 255);
+    }
+  }
+
+  &__navName {
+    margin: 0;
+  }
+
+  &__slider {
+    margin-top: 10px;
+    border-top: solid rgba(31, 38, 46, 0.8) 1px;
+    padding-top: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+}

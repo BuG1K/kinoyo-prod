@@ -1,0 +1,172 @@
+@import "@/styles/vars.scss";
+
+.header {
+  z-index: 10;
+  position: fixed;
+  top: 0;
+  box-sizing: border-box;
+  border-bottom: 1px solid rgba(194, 224, 255, 0.08);
+  padding: 8px 16px;
+  width: 100%;
+  height: $header-height;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgba(16, 20, 24, 0.8);
+
+  &__side {
+    display: flex;
+    grid-gap: 10px;
+  }
+
+  &__notificationContainer {
+    position: relative;
+  }
+
+  &__button {
+    border-radius: 12px;
+    padding: 8px;
+  }
+}
+
+.modalMenu {
+  z-index: 20;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  &__container {
+    width: 80%;
+    height: 100%;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 8px 10px -5px,
+                rgba(0, 0, 0, 0.14) 0px 16px 24px 2px,
+                rgba(0, 0, 0, 0.12) 0px 6px 30px 5px;
+  }
+}
+
+.openModalMenu {
+  animation: opneMenu .4s ease-in-out forwards;
+
+  .modalMenu__container {
+    animation: openContainer .4s ease-in-out forwards;
+  }
+}
+
+.closeModalMenu {
+  pointer-events: none;
+  animation: closeMenu .4s ease-in-out forwards;
+
+  .modalMenu__container {
+    animation: closeContainer .4s ease-in-out forwards;
+  }
+}
+
+.desktopMenu {
+  width: $menu-weight;
+
+  .modalMenu__container {
+    box-shadow: none;
+    width: 100%;
+  }
+}
+
+.notifications {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  overflow: auto;
+  box-sizing: border-box;
+  border: 1px solid rgb(31, 38, 46);
+  border-radius: 12px;
+  padding: 10px;
+  width: 230px;
+  max-height: 230px;
+  background-color: rgb(16, 20, 24);
+  font-size: $sub-sup-font-size;
+  box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+
+  &__notification {
+    padding: 8px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__name {
+    overflow: hidden;
+    text-align: left;
+    text-overflow: ellipsis;
+    color: white;
+  }
+
+  &__date {
+    color: rgb(176, 184, 196);
+
+    &_active {
+      color: rgb(255, 85, 0);
+    }
+  }
+
+  &__void {
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+@media (min-width: $screen-sm) {
+  .modalMenu {
+    &__container {
+      width: 50%;
+    }
+  }
+}
+
+@media (min-width: $screen-lg) {
+  .header {
+    background-color: rgb(16, 20, 24);
+  }
+}
+
+@keyframes opneMenu {
+  0% {
+    background-color: rgba(0, 0, 0, 0);
+  }
+
+  100% {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+}
+
+@keyframes openContainer {
+  0% {
+    transform: translate(-100%, 0);
+  }
+
+  100% {
+    transform: translate(0%, 0);
+  }
+}
+
+@keyframes closeMenu {
+  0% {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+
+  100% {
+    background-color: rgba(0, 0, 0, 0);
+  }
+}
+
+@keyframes closeContainer {
+  0% {
+    transform: translate(0%, 0);
+  }
+
+  100% {
+    transform: translate(-100%, 0);
+  }
+}

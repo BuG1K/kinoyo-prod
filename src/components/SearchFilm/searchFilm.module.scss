@@ -1,0 +1,116 @@
+.searchFilm {
+  position: relative;
+  box-shadow: rgba(16, 20, 24, 0.7) 0px 4px 20px;
+  border: 1px solid rgb(31, 38, 46);
+  border-radius: 12px;
+  width: 100%;
+  height: 100%;
+  min-height: 30px;
+  display: flex;
+  align-items: center;
+  background-color: rgb(20 26 31);
+  box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2),
+              0px 1px 1px 0px rgba(0, 0, 0, 0.14),
+              0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+
+  &__search {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+  }
+
+  &__input {
+    outline: none;
+    box-sizing: border-box;
+    padding: 10px 20px;
+    border: none;
+    width: 100%;
+    background: none;
+    color: rgb(255, 255, 255);
+
+    &::placeholder {
+      color: rgb(176, 184, 196, .4);
+    }
+
+    &:disabled {
+      color: rgba(255, 255, 255, 0.5);
+    }
+  }
+
+  &__button {
+    box-sizing: border-box;
+    border: none;
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 12px;
+    width: 20%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(31, 38, 46);
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  }
+
+  &__loading {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    
+    &::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      border-top: 2px solid rgb(0, 127, 255);
+      border-radius: 50%;
+      width: 15px;
+      height: 15px;
+      animation: spin 1.3s linear 0s infinite;
+    }
+  }
+
+  &__result {
+    position: absolute;
+    z-index: 10;
+    top: 100%;
+    left: -1px;
+    border-left: 1px solid rgb(31, 38, 46);
+    border-right: 1px solid rgb(31, 38, 46);
+    border-bottom: 1px solid rgb(31, 38, 46);
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    width: 100%;
+    height: max-content;
+    background-color: rgb(20 26 31);
+    box-shadow: 0 19px 38px rgba(0,0,0,0.30),
+                0 15px 12px rgba(0,0,0,0.22);
+  }
+
+  &__resultError {
+    border-top: 1px solid rgb(31, 38, 46);
+    padding: 20px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}
+
+.searchFilmWithResult {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+
+  &__button {
+    border-bottom-right-radius: 0;
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}

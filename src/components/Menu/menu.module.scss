@@ -1,0 +1,69 @@
+@import "@/styles/vars.scss";
+
+.menu {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(16, 20, 24);
+
+  &__header {
+    box-sizing: border-box;
+    border-bottom: 1px solid rgba(31, 38, 46, 0.8);
+    padding: 10px;
+    height: $header-height;
+    display: flex;
+  }
+
+  &__logo {
+    border-right: 1px solid rgba(59, 74, 89, 0.2);
+    padding-right: 10px;
+  }
+
+  &__user {
+    padding-left: 10px;
+    overflow: hidden;
+  }
+
+  &__name {
+    color: rgb(107 122 144);
+  }
+
+  &__links {
+    display: flex;
+    grid-gap: 10px;
+    align-items: center;
+  }
+
+  &__list {
+    flex: 1;
+    overflow-y: auto;
+    box-sizing: border-box;
+    padding: 10;
+    font-size: $small-font-size;
+  }
+
+  &__voidBookmarks {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    fill: rgb(176, 184, 196);
+  }
+
+  &__footer {
+    box-sizing: border-box;
+    border-top: 1px solid rgba(31, 38, 46, 0.8);
+    padding: 10px 10px 10px 20px;
+    height: $app-padding-desktop;
+    display: flex;
+    justify-content: center;
+    grid-gap: 20px;
+  }
+
+  &__blankLink {
+    display: flex;
+    align-items: center;
+  }
+}

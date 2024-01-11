@@ -1,0 +1,17 @@
+.auth {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  border: 1px solid rgba(218, 224, 231, 0.08);
+  border-radius: 12px;
+  padding: 30px;
+  width: 250px;
+
+  background-color: rgba(31, 38, 46, 0.3);
+
+  &__form {
+    margin-top: 20px;
+  }
+}

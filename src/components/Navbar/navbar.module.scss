@@ -1,0 +1,17 @@
+.navbar {
+  &__nav {
+    display: flex;
+  }
+
+  &__link {
+    overflow: hidden;
+    cursor: pointer;
+    user-select: none;
+    text-align: center;
+  }
+
+  &__slider {
+    height: 3px;
+    background-color: rgb(102, 178, 255);
+  }
+}

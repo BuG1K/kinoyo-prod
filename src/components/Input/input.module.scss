@@ -1,0 +1,194 @@
+$name-font-size: 15px;
+$name-height: 20px;
+$name-padding: 10px;
+
+$value-font-size: $name-font-size * 1.1;
+$border-width: 1px;
+
+$container-padding: 10px;
+$container-border-radius: 8px;
+
+$messageError-height: 15px;
+$messageError-margin: 5px;
+
+.input {
+  position: relative;
+  height: 67px;
+
+  &__border {
+    box-sizing: border-box;
+    padding-top: $name-height / 2 - $border-width;
+    padding-bottom: $messageError-height + $messageError-margin;
+
+    &_focus {
+      .input__container {
+        border-width: $border-width * 1.2;
+        border-color: rgb(144, 202, 249);
+      }
+
+      .input__placeholder {
+        color: rgb(144, 202, 249);
+      }
+    }
+
+    &_input {
+      padding-top: 0;
+
+      .input__container {
+        padding-block-start: $border-width * 2;
+      }
+
+      .input__name {
+        display: block;
+        animation: name .2s ease-in-out forwards;
+      }
+
+      .input__placeholder {
+        animation: placeholder .2s ease-in-out forwards;
+      }
+    }
+
+    &_revers {
+      .input__placeholder {
+        animation: placeholder-revers .2s ease-in-out forwards;
+      }
+    }
+
+    &_default {
+      padding-top: 0;
+
+      .input__container {
+        padding-block-start: $border-width * 2;
+      }
+
+      .input__name {
+        display: block;
+        animation: name .000001s ease-in-out forwards;
+      }
+
+      .input__placeholder {
+        animation: placeholder .000001s ease-in-out forwards;
+      }
+    }
+
+    &_error {
+      .input__container {
+        border-color: rgb(244, 67, 54);
+      }
+
+      .input__placeholder {
+        color: rgb(244, 67, 54);
+      }
+
+      .input__message {
+        color: rgb(244, 67, 54);
+      }
+    }
+
+    &_disabled {
+      .input__value {
+        color: rgba(255, 255, 255, 0.5);
+      }
+    }
+  }
+
+  &__container {
+    box-sizing: border-box;
+    position: relative;
+    border-width: $border-width;
+    display: block;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-block-start: 0px;
+    padding-inline-start: $container-padding;
+    padding-inline-end: 0px;
+    padding-block-end: 0px;
+    min-inline-size: min-content;
+    border-style: groove;
+    border-image: initial;
+    border-radius: $container-border-radius;
+    padding-block-start: $name-padding;
+    border-color: rgba(255, 255, 255, 0.3);
+  }
+
+  &__name {
+    display: none;
+    font-size: $name-font-size;
+    color: rgba(0, 0 ,0, 0);
+  }
+
+  &__value {
+    margin-top: ($name-height / -2);
+    margin-left: $container-padding * -1;
+
+    box-sizing: border-box;
+    border: none;
+    border-radius: $container-border-radius;
+    width: calc(100% + $name-padding);
+    height: 40px;
+    padding: 0;
+    padding-left: $name-padding + $container-padding;
+
+    background: none !important;
+
+    font: inherit;
+    font-size: $value-font-size;
+    color: white;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &__placeholder {
+    position: absolute;
+    left: $container-padding + $name-padding;
+    color: rgba(255, 255, 255, 0.5);
+    user-select: none;
+    pointer-events: none;
+  }
+
+  &__message {
+    position: absolute;
+    bottom: -5px;
+    left: $container-padding + $name-padding;
+
+    height: $messageError-height;
+    font-size: $name-font-size / 1.3;
+    color: white;
+  }
+}
+
+@keyframes name {
+  0% {
+    width: 0px;
+    padding: 0px;
+  }
+
+  100% {
+    padding: 0 $name-padding;
+    width: fit-content;
+  }
+}
+
+@keyframes placeholder-revers {
+  0% {
+    bottom: $name-height * 1.5 + $border-width * 2;
+    font-size: $name-font-size;
+  }
+  100% {
+    bottom: $name-height / 2 - $border-width;
+    font-size: $value-font-size;
+  }
+}
+
+@keyframes placeholder {
+  0% {
+    bottom: $name-height / 2 - $border-width;
+    font-size: $value-font-size;
+  }
+  100% {
+    bottom: $name-height * 1.5 + $border-width * 2;
+    font-size: $name-font-size;
+  }
+}

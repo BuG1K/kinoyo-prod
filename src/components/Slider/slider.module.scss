@@ -1,0 +1,85 @@
+.slider {
+  position: relative;
+  overflow: hidden;
+
+  &__slide {
+    pointer-events: none;
+    position: absolute;
+    box-sizing: border-box;
+    width: 100%;
+
+    &_middle {
+      pointer-events: all;
+      position: static;
+    }
+
+    &_rightLeft {
+      animation: rightLeft ease-in-out forwards;
+    }
+
+    &_leftRight {
+      animation: leftRight ease-in-out forwards;
+    }
+
+    &_middleLeft {
+      animation: middleLeft ease-in-out forwards;
+    }
+
+    &_middleRight {
+      animation: middleRight ease-in-out forwards;
+    }
+  }
+}
+
+@keyframes rightLeft {
+  0% {
+    transform: translate(130%, 0);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+}
+@keyframes leftRight {
+  0% {
+    transform: translate(-130%, 0);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+}
+@keyframes middleLeft {
+  0% {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+
+  60% {
+    opacity: 0;
+  }
+
+  100% {
+    transform: translate(-130%, 0);
+    opacity: 0;
+  }
+}
+@keyframes middleRight {
+  0% {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+
+  60% {
+    opacity: 0;
+  }
+
+  100% {
+    transform: translate(130%, 0);
+    opacity: 0;
+  }
+}

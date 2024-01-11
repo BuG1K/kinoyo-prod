@@ -1,0 +1,14 @@
+.premiere {
+  padding: 5px 0;
+
+  &__episode {
+    padding: 5px 0;
+    display: flex;
+    grid-gap: 10px;
+    color: rgb(107 122 144);
+
+    &_today {
+      color: rgb(255, 85, 0);
+    }
+  }
+}
